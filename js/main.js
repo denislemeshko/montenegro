@@ -17,8 +17,8 @@ $(function () {
 	// *слайдер slick - section gallery
 
 	$('.gallery__slider').slick({
-		prevArrow:'<button type="button" class="slick-btn slick-prev"><img src="images/svg/slider-arrow-prep.svg" alt=""></button>',
-		nextArrow:'<button type="button" class="slick-btn slick-next"><img src="images/svg/slider-arrow-next.svg" alt=""></button>',
+		prevArrow: '<button type="button" class="slick-btn slick-prev"><img src="images/svg/slider-arrow-prep.svg" alt=""></button>',
+		nextArrow: '<button type="button" class="slick-btn slick-next"><img src="images/svg/slider-arrow-next.svg" alt=""></button>',
 	}
 	);
 
@@ -32,28 +32,41 @@ $(function () {
 		gallery: {
 			enabled: true,
 			navigateByImgClick: true,
-			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+			preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
 		},
 
 	});
-//  *Гамбургер меню
+	//  *Гамбургер меню
 
- $('.menu__btn').on('click', function() {
-	$('.menu__list').toggleClass('menu__list--active')
- });
+	$('.menu__btn').on('click', function () {
+		$('.menu__list').toggleClass('menu__list--active')
+	});
 
- // counter
- $('.tour__info-item-num').each(function () {
-   var size = $(this).text().split(".")[1] ? $(this).text().split(".")[1].length : 0;
-   $(this).prop('Counter', 0).animate({
-      Counter: $(this).text()
-   }, {
-      duration: 5000,
-      step: function (func) {
-         $(this).text(parseFloat(func).toFixed(size));
-      }
-   });
-});
+	// counter
+	//  $('.tour__info-item-num').each(function () {
+	//    var size = $(this).text().split(".")[1] ? $(this).text().split(".")[1].length : 0;
+	//    $(this).prop('Counter', 0).animate({
+	//       Counter: $(this).text()
+	//    }, {
+	//       duration: 5000,
+	//       step: function (func) {
+	//          $(this).text(parseFloat(func).toFixed(size));
+	//       }
+	//    });
+	// });
+	 //smooth scroll
+	 $('a[href^="#"').on('click', function() {
+
+		let href = $(this).attr('href');
+
+		$('html, body').animate({
+			 scrollTop: $(href).offset().top
+		});
+		return false;
+  });
+
+  
+
 
 
 });
