@@ -509,6 +509,7 @@ textarea:focus {
 
 .map-iframe {
 	max-width: 1120px;
+	width: 100%;
 }
 .map iframe{
 	width: 100%;
